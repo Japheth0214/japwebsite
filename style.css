@@ -54,6 +54,10 @@ html {
 /* ---##-- REUSABLE CSS --##--- */
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
+
+br{
+    display: none;
+}
 .btn {
     font-weight: 500;
     padding: 12px 20px;
@@ -94,6 +98,7 @@ body {
 }
 
 /* ----- NAVIGATION BAR ----- */
+
 nav {
     position: fixed;
     display: flex;
@@ -818,7 +823,12 @@ footer {
 
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
 
-@media only screen and (max-width: 738px) {
+@media only screen and (max-width: 768px) {
+
+
+    br{
+        display:inline;
+    }
     .featured-name {
         font-size: 40px;
     }

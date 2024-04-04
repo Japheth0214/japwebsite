@@ -43,7 +43,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText",{
-  strings : ["Quality Analyst","Web Developer"],
+  strings : ["Web Developer","Software QA Tester"],
   loop : true,
   typeSpeed : 100, 
   backSpeed : 80,
