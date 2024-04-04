@@ -5,17 +5,31 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+    const hireMeBtn = document.getElementById('hireMeBtn');
+    const contactSection = document.getElementById('contact'); // Assuming the contact section has an id of 'contact'
+
+    hireMeBtn.addEventListener('click', function() {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+
+
 /* ----- NAVIGATION BAR FUNCTION ----- */
-function myMenuFunction(){
+function myMenuFunction() {
   var menuBtn = document.getElementById("myNavMenu");
 
-  if(menuBtn.classList.contains("responsive")){
-    setTimeout(function() {
-      menuBtn.classList.remove("responsive");
-    }, 500); // Adjust delay as needed
+  if (menuBtn.classList.contains("responsive")) {
+    menuBtn.classList.remove("responsive");
   } else {
     menuBtn.classList.add("responsive");
   }
+}
+
+function closeMenu() {
+  var menuBtn = document.getElementById("myNavMenu");
+  menuBtn.classList.remove("responsive");
 }
 
 
