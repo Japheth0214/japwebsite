@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <title>Jap's Portfolio</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Jap</p>
+                <span>.</span>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav_menu_list">
+                    <li class="nav_list">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#about" class="nav-link">About</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#experience" class="nav-link">Experience</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav_list">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn download-cv-btn">Download CV <i class="uil uil-file-alt"></i></button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+
+        <!-- -------------- MAIN ---------------- -->
+        <main class="wrapper">
+            <!-- -------------- FEATURED BOX ---------------- -->
+            <section class="featured-box" id="home">
+                <div class="featured-text">
+                    <div class="featured-text-card">
+                        <span>Japheth James Arcilla</span>
+                    </div>
+                    <div class="featured-name">
+                        <p>I'm <span class="typedText"></span></p>
+                    </div>
+                    <div class="featured-text-info">
+                        <p>I specialize in testing and building web applications and services, with a strong background
+                            in the development and
+                            testing processes for web-based technologies.
+                        </p>
+                    </div>
+                    <div class="featured-text-btn">
+                        <button class="btn blue-btn">Hire Me</button>
+                        <button class="btn download-cv-btn">Download CV <i class="uil uil-file-alt"></i></button>
+                    </div>
+
+                    <div class="social_icons">
+                        <div class="icon"><i class="uil uil-instagram"></i></div>
+                        <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                        <div class="icon"><i class="uil uil-dribbble"></i></div>
+                        <div class="icon"><i class="uil uil-github-alt"></i></div>
+                    </div>
+                </div>
+                <div class="featured-image">
+                    <div class="image">
+                        <img src="images/avatar.png" alt="avatar">
+                    </div>
+                </div>
+            <div class="scroll-icon-box">
+                <a href="#about" class="scroll-btn">
+                    <i class="uil uil-mouse-alt"></i>
+                    <p>Scroll Down</p>
+                </a>
+            </div>
+
+
+            </section>
+            <!-- -------------- ABOUT BOX ---------------- -->
+            <section class="section" id="about">
+                <div class="top-header">
+                    <h1>About Me</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <h3>My introduction</h3>
+                            <p> Familiar with development and testing
+                                process for web-based technologies. Obtained Certifications for Web development and
+                                Software testing with a hands on
+                                experience specially in MERN Stack as a full Stack developer and React JS as a front end
+                                developer.
+                            </p>
+                            <div class="about-btn">
+                                <button class="btn download-cv-btn">Download CV <i class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="skills-box">
+                            <div class="skills-header">
+                                <h3>Web Developer</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Tailwind</span>
+                                <span>Sass</span>
+                                <span>JavaScript</span>
+                                <span>MongoDB</span>
+                                <span>Express</span>
+                                <span>React</span>
+                                <span>Node JS</span>
+                            </div>
+                        </div>
+                        <div class="skills-box">
+                            <div class="skills-header">
+                                <h3>Quality Analyst</h3>
+                            </div>
+                            <div class="skills-list">
+                                <span>Manual testing</span>
+                                <span>Automation testing </span>
+                                <span>Cypress</span>
+                                <span>Agile Method</span>
+                                <span>JIRA</span>
+                                <span>Git</span>
+                                <span>Bug tracking</span>
+                                <span>Test case</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- -------------- Experience BOX ---------------- -->
+
+            <section class="section" id="experience">
+                <div class="top-header2">
+                    <h4 class="stat-title">Work Experiences</h4>
+                    <span>My career is focused on Software testing and Web development</span>
+                    </div>
+                <div class="top-header">
+                    <div class="timeline">
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/meta.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Nov 2023 - Present</p>
+                            <h5>Front End Developer <span><br>Meta (part time) </span></h5>
+                           
+                        </div>
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/awb.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Aug 2023 - Oct 2023</p>
+                            <h5>Quality Engineer Intern <br><span>Achieve Without Borders</span></h5>
+                           
+                        </div>
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/inovo.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Dec 2022 - Mar 2023</p>
+                            <h5>Full Stack Developer Trainee <br> <span>I Novotek Academy</span></h5>
+                          
+                        </div>
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/Fusion.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Mar 2021 - Sept 2022</p>
+                            <h5>Account Payable Specialist <br><span>Fusion BPO Services</span></h5>
+                            
+                        </div>
+                    
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/teleperformance.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Nov 2019 - Aug 2020</p>
+                            <h5>Flight Travel Advisor <br><span>Trip.com | Teleperformance</span></h5>
+                           
+                        </div>
+                        <div class="experience-info">
+                            <div class="tl-icon">
+                                <img src="images/rj.png" alt="Icon" class="rounded-icon">
+                            </div>
+                            <p class="tl-duration">Mar 2019 - Aug 2019</p>
+                            <h5>Customer Service Representative<br><span>DOMU Brands</span></h5>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+         </section>
+                            
+            <!-- -------------- PROJECT BOX ---------------- -->
+
+            <section class="section" id="projects">
+                <div class="top-header2">
+                    <h1> Projects</h1>
+                    <span>The following projects showcase my skills and experience through real-world examples of my work.
+                    technologies, and manage projects effectively.</span>
+                    </div>
+                    <div class="top-header">
+            <div class="project-container">
+                <a href="https://real-estate-com-u6ln.onrender.com/" class="project-box" target="_blank">
+                    <i class="uil uil-building"></i>
+                    <h3>Real Estate Website</h3>
+                    <label>MongoDB, Express JS, React, Node JS </label>
+                </a>
+                <a href="https://little-lemon-app-m0qh.onrender.com/" class="project-box" target="_blank">
+                    <i class="uil uil-calendar-alt"></i>
+                    <h3> Reservation App</h3>
+                    <label>Frontend React</label>
+                </a>
+                <a href="https://japheth0214.github.io/shopping-cart/index.html" class="project-box" target="_blank">
+                    <i class="uil uil-shopping-cart"></i>
+                    <h3>Mini Ecommerce</h3>
+                    <label>HTML CSS JavaScript</label>
+                </a>
+                <a href="https://japheth0214.github.io/task-list/" class="project-box" target="_blank">
+                    <i class="uil uil-list-ul"></i>
+                    <h3>Todo list App</h3>
+                    <label>HTML CSS JavaScript</label>
+                </a>
+                <a href="https://japheth0214.github.io/Tiktaktoe-Game/" class="project-box" target="_blank">
+                    <i class="uil uil-x"></i>
+                    <h3>Tic-Tac-Toe</h3>
+                    <label>HTML CSS JavaScript</label>
+                </a>
+                <a href="https://japheth0214.github.io/youtubeclone/youtubeclone" class="project-box" target="_blank">
+                    <i class="uil uil-youtube"></i>
+                    <h3> Youtube Clone</h3>
+                    <label>HTML CSS Only</label>
+                </a>
+            </div>
+
+            </section>
+
+
+
+
+            <!-- -------------- CONTACT BOX ---------------- -->
+<section class="section" id="contact">
+    <div class="top-header">
+        <h1>Get in touch</h1>
+        <span>Do you have a project in your mind, contact me here</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="contact-info">
+                <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                <p><i class="uil uil-envelope"></i> Email: japarcillians@gmail.com</p>
+                <p><i class="uil uil-map"></i> Address: Morong, Rizal Philippines</p>
+                <p><i class="uil uil-phone"></i> Cel: +639 457 75 6900</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-control">
+                <div class="form-inputs">
+                    <input type="text" class="input-field" id="name" placeholder="Name*">
+                    <input type="email" class="input-field" id="email" placeholder="Email*">
+                </div>
+                <div class="form-inputs">
+                    <input type="text" class="input-fields" id="subjects" placeholder="Subject*">
+                </div>
+                <div class="text-area">
+                    <textarea id="message" placeholder="Message*"></textarea>
+                </div>
+                <div class="form-button">
+                    <!-- Call the sendEmail() function when the button is clicked -->
+                    <button class="btn" onclick="sendEmail(event)" id="send-button">Send <i
+                            class="uil uil-message"></i></button>
+                </div>
+                <div class="form-error" id="form-error"></div>
+                <div class="form-success" id="form-success"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </main>
+
+
+        <!-- --------------- FOOTER --------------- -->
+        <footer>
+            <div class="top-footer">
+                <p>Japheth James Arcilla.</p>
+            </div>
+            <div class="middle-footer">
+                <ul class="footer-menu">
+                    <li class="footer_menu_list">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li class="footer_menu_list">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-social-icons">
+                <div class="icon"><i class="uil uil-instagram"></i></div>
+                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                <div class="icon"><i class="uil uil-dribbble"></i></div>
+                <div class="icon"><i class="uil uil-github-alt"></i></div>
+            </div>
+            <div class="bottom-footer">
+                <p>Create &copy; <a href="#home" style="text-decoration: none;">Japheth Arcilla</a> - All rights
+                    reserved
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
