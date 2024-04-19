@@ -1,9 +1,72 @@
- document.querySelectorAll('.download-cv-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            // Open the PDF file in a new tab
-            window.open('images/resume.pdf', '_blank');
+
+
+// JavaScript to handle the modal and event listeners for each certificate button
+document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        var modal = document.getElementById('certificateModal');
+        var closeModal = modal.querySelector('.close');
+        var pdfFrame = modal.querySelector('#pdfFrame');
+        
+        // Get the certificate URL based on the clicked button
+        var certificateUrl;
+        switch(this.dataset.certificate) {
+             case 'cv':
+                certificateUrl = 'images/resume.pdf';
+                break;
+            case 'cert1':
+                certificateUrl = 'images/cert1.pdf';
+                break;
+            case 'cert2':
+                certificateUrl = 'images/cert2.pdf';
+                break;
+            case 'cert3':
+                certificateUrl = 'images/cert3.pdf';
+                break
+            case 'cert4':
+                certificateUrl = 'images/cert4.pdf';
+                break;
+            case 'cert5':
+                certificateUrl = 'images/cert5.pdf';
+                break;
+            case 'cert6':
+                certificateUrl = 'images/cert6.pdf';
+                break;
+            case 'cert7':
+                certificateUrl = 'images/cert7.pdf';
+                break;
+            case 'cert8':
+                certificateUrl = 'images/cert8.pdf';
+                break;
+            case 'cert9':
+                certificateUrl = 'images/cert9.pdf';
+                break;
+             case 'cert10':
+                certificateUrl = 'images/cert10.pdf';
+                break;
+            // Add cases for the rest of your certificates
+            default:
+                certificateUrl = 'images/default.pdf'; // Default PDF if no match
+        }
+        
+         pdfFrame.src = certificateUrl;
+        modal.style.display = 'block';
+
+        // Close the modal when the close button is clicked
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
         });
+
+        // Close the modal when the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
+            }
+        };
     });
+});
+
 
     document.addEventListener('DOMContentLoaded', function() {
     const hireMeBtn = document.getElementById('hireMeBtn');
@@ -110,6 +173,10 @@ const srRight = ScrollReveal({
 
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
+
+
+/* -- CERTIFICATE INFO -- */
+sr.reveal('.cert-info', { interval: 200 })
 
 /* ----- EMAIL JS CONTACT ----- */
 
@@ -228,6 +295,30 @@ function sendEmail(event) {
         sendButton.innerHTML = '<span>Send</span> <i class="uil uil-message"></i>';
     });
 }
+
+document.querySelectorAll('.view-certificate').forEach(button => {
+    button.addEventListener('click', function() {
+        // Get the modal
+        var modal = document.getElementById("certificateModal");
+        
+        // Display the modal
+        modal.style.display = "block";
+        
+        // Close the modal when the close button is clicked
+        var closeBtn = document.querySelector(".close");
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    });
+});
+
 
 
 

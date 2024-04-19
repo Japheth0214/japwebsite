@@ -52,7 +52,7 @@
                 </ul>
             </div>
             <div class="nav-button">
-                <button class="btn download-cv-btn">Download CV <i class="uil uil-file-alt"></i></button>
+                <button class="btn download-cv-btn" data-certificate="cv"> Download CV <i class="uil uil-import"></i></button>
             </div>
             <div class="nav-menu-btn">
                 <i class="uil uil-bars" onclick="myMenuFunction()"></i>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="featured-text-btn">
                             <button class="btn blue-btn" id="hireMeBtn">Hire Me</button>
-                            <button class="btn download-cv-btn">Download CV <i class="uil uil-file-alt"></i></button>
+                             <button class="btn download-cv-btn" data-certificate="cv"> Download CV <i class="uil uil-import"></i></button>
                         </div>
                         <div class="social_icons">
                             <div class="icon">
@@ -110,17 +110,17 @@
                 <!-- ABOUT BOX -->
                 <section class="section" id="about">
                     <div class="top-header">
-                        <h1>About Me</h1>
+                        <h1>My Skills and Certificates</h1>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="about-info">
-                                <h3>My Introduction</h3>
+                                <h3>About me</h3>
                                 <p>Familiar with development and testing process for web-based technologies. Obtained Certifications for
                                     Web development and Software testing with hands-on experience, especially in MERN Stack as a Full
                                     Stack developer and React JS as a front-end developer.</p>
                                 <div class="about-btn">
-                                    <button class="btn download-cv-btn">Download CV <i class="uil uil-import"></i></button>
+                                    <button class="btn download-cv-btn" data-certificate="cv"> Download CV  <i class="uil uil-import"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -162,12 +162,85 @@
                     </div>
                 </section>
 
-
-
-        <!-- EXPERIENCE BOX -->
-        <section class="section" id="experience">
-            <div class="top-header2">
-                <h4 class="stat-title">Work Experiences</h4>
+                    <!-- CERTIFICATE BOX -->
+                    <section class="section1" id="about">
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p> Software Testing & Automation</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert1">Certificate<i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p> Agile with Atlassian Jira</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert2">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p> Manual Software Testing</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert3">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>Software Testing with Jira & Agile</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert4">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>Intro: Frontend Development</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert5">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>React Basics Course</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert6">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>Advanced React Course</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert7">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>FE Developer Capstone</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert8">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>Getting started w/ Git and GitHub</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert9">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                        <div class="cert-info">
+                            <div class="btn">
+                                <p>Full Stack Dev Bootcamp</p>
+                                <button class="btn download-cert-btn white-button" data-certificate="cert10">Certificate <i
+                                        class="uil uil-import"></i></button>
+                            </div>
+                        </div>
+                    </section>
+                    </section>
+                    
+                    <!-- EXPERIENCE BOX -->
+                    <section class="section" id="experience">
+                        <div class="top-header2">
+                            <h4 class="stat-title">Work Experiences</h4>
                 <span>My career is focused on Web development and Software Testing</span>
             </div>
             <div class="top-header">
@@ -175,26 +248,39 @@
                     <div class="experience-info">
                         <div class="tl-icon">
                             <img src="images/upwork.png" alt="Icon" class="rounded-icon">
+                            <p class="tl-duration">Nov 2023 - Present</p>
+                            <h5>FRONTEND DEVELOPER</h5>
+                            <h5><span>Upwork (Part time)</span></h5>
                         </div>
-                        <p class="tl-duration">Nov 2023 - Present</p>
-                        <h5>FRONTEND DEVELOPER</h5>
-                        <h5><span>Upwork (Part time)</span></h5>
+                       
+                        <p> Implementing frontend components and user interfaces in React.js based on design specifications and user stories,
+                        including writing, updating, and maintaining frontend code, conducting unit and integration tests, integrating with
+                        backend services, and participating in code reviews to ensure code quality. </p>
                     </div>
                     <div class="experience-info">
                         <div class="tl-icon">
                             <img src="images/awb.png" alt="Icon" class="rounded-icon">
+                            <p class="tl-duration">Aug 2023 - Oct 2023</p>
+                            <h5>QUALITY ENGINEER INTERN</h5>
+                            <h5><span>Achieve Without Borders</span></h5>
                         </div>
-                        <p class="tl-duration">Aug 2023 - Oct 2023</p>
-                        <h5>QUALITY ENGINEER INTERN</h5>
-                        <h5><span>Achieve Without Borders</span></h5>
+                        <p>QC and QA processes, project management, understanding and validating software requirements, designing
+                        test plans, executing automated and manual testing with tools like Cypress, implementing test
+                        cases, documenting defects or bugs, and navigating through the Software Development and Testing Life Cycles.</p>
                     </div>
                     <div class="experience-info">
                         <div class="tl-icon">
                             <img src="images/inovo.png" alt="Icon" class="rounded-icon">
+                            <p class="tl-duration">Dec 2022 - Mar 2023</p>
+                            <h5>FULL STACK DEVELOPER TRAINEE</h5>
+                            <h5><span>I Novotech Academy</span></h5>
                         </div>
-                        <p class="tl-duration">Dec 2022 - Mar 2023</p>
-                        <h5>FULL STACK DEVELOPER TRAINEE</h5>
-                        <h5><span>I Novotech Academy</span></h5>
+                        <div>
+                        <p>Used MongoDB, Express, React JS, Node JS across
+                        diverse projects from simple sites to complex web apps, excelling in creating RESTful APIs, adopting GitHub
+                        for version control, utilizing HTTP requests for data fetching, and honing data modeling skills with Mongoose, all
+                        gained through  bootcamp training.</p>
+                        </div>
                     </div>
                     <div class="experience-info">
                         <div class="tl-icon">
@@ -203,7 +289,7 @@
                         <p class="tl-duration">Mar 2021 - Sept 2022</p>
                         <h5> ACCOUNT PAYABLE SPECIALIST</h5>
                         <h5><span>Fusion BPO Services</span></h5>
-
+                        
                     </div>
                     <div class="experience-info">
                         <div class="tl-icon">
@@ -212,7 +298,7 @@
                         <p class="tl-duration">Nov 2019 - Aug 2020</p>
                         <h5> FLIGHT TRAVEL ADVISOR</h5>
                         <h5><span>Trip.com | Teleperformance</span></h5>
-                    </div>
+                                                </div>
                     <div class="experience-info">
                         <div class="tl-icon">
                             <img src="images/rj.png" alt="Icon" class="rounded-icon">
@@ -223,7 +309,8 @@
                 </div>
             </div>
         </section>
-        
+       
+
         <!-- PROJECT BOX -->
         <section class="section" id="projects">
             <div class="top-header2">
@@ -323,12 +410,19 @@
                             class="uil uil-linkedin-alt"></i></a></div>
             </div>
             <div class="bottom-footer">
-                <p>Create &copy; <a href="#home" style="text-decoration: none;">Japheth Arcilla</a> - All rights
-                    reserved
+                <p> <a href="#home" style="text-decoration: none;"></a>( Made with Render )
+                    
                 </p>
             </div>
         </footer>
     </div>
+
+<div id="certificateModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="pdfFrame" src="" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
 
 
 
