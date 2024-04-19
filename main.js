@@ -1,16 +1,35 @@
+// Function to open the certificate modal
+function openCertificateModal(certificateUrl) {
+    var modal = document.getElementById('certificateModal');
+    var closeModal = modal.querySelector('.close');
+    var pdfFrame = modal.querySelector('#pdfFrame');
 
+    pdfFrame.src = certificateUrl;
+    modal.style.display = 'block';
 
-// JavaScript to handle the modal and event listeners for each certificate button
+    // Close the modal when the close button is clicked
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
+    });
+
+    // Close the modal when the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
+        }
+    };
+}
+
+// Add event listeners to download buttons
 document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button => {
     button.addEventListener('click', function() {
-        var modal = document.getElementById('certificateModal');
-        var closeModal = modal.querySelector('.close');
-        var pdfFrame = modal.querySelector('#pdfFrame');
-        
-        // Get the certificate URL based on the clicked button
+        var certificateType = this.dataset.certificate;
         var certificateUrl;
-        switch(this.dataset.certificate) {
-             case 'cv':
+
+        switch (certificateType) {
+            case 'cv':
                 certificateUrl = 'images/resume.pdf';
                 break;
             case 'cert1':
@@ -21,7 +40,7 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
                 break;
             case 'cert3':
                 certificateUrl = 'images/cert3.pdf';
-                break
+                break;
             case 'cert4':
                 certificateUrl = 'images/cert4.pdf';
                 break;
@@ -40,147 +59,120 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
             case 'cert9':
                 certificateUrl = 'images/cert9.pdf';
                 break;
-             case 'cert10':
+            case 'cert10':
                 certificateUrl = 'images/cert10.pdf';
                 break;
-            // Add cases for the rest of your certificates
             default:
-                certificateUrl = 'images/default.pdf'; // Default PDF if no match
+                certificateUrl = 'images/resume.pdf';
         }
-        
-         pdfFrame.src = certificateUrl;
-        modal.style.display = 'block';
 
-        // Close the modal when the close button is clicked
-        closeModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-            pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
-        });
-
-        // Close the modal when the user clicks outside of it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-                pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
-            }
-        };
+        openCertificateModal(certificateUrl);
     });
 });
 
-
-    document.addEventListener('DOMContentLoaded', function() {
+// Scroll to contact section when "Hire Me" button is clicked
+document.addEventListener('DOMContentLoaded', function() {
     const hireMeBtn = document.getElementById('hireMeBtn');
-    const contactSection = document.getElementById('contact'); // Assuming the contact section has an id of 'contact'
+    const contactSection = document.getElementById('contact');
 
     hireMeBtn.addEventListener('click', function() {
         contactSection.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-
-
-/* ----- NAVIGATION BAR FUNCTION ----- */
+// Toggle navigation menu for smaller screens
 function myMenuFunction() {
-  var menuBtn = document.getElementById("myNavMenu");
+    var menuBtn = document.getElementById("myNavMenu");
 
-  if (menuBtn.classList.contains("responsive")) {
-    menuBtn.classList.remove("responsive");
-  } else {
-    menuBtn.classList.add("responsive");
-  }
+    if (menuBtn.classList.contains("responsive")) {
+        menuBtn.classList.remove("responsive");
+    } else {
+        menuBtn.classList.add("responsive");
+    }
 }
 
+// Remove responsive class from navigation menu when an item is clicked
 function closeMenu() {
-  var menuBtn = document.getElementById("myNavMenu");
-  menuBtn.classList.remove("responsive");
+    var menuBtn = document.getElementById("myNavMenu");
+    menuBtn.classList.remove("responsive");
 }
 
-
-
-/* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
-window.onscroll = function() {headerShadow()};
+// Change navigation bar style while scrolling
+window.onscroll = function() { headerShadow() };
 
 function headerShadow() {
-  const navHeader = document.getElementById("header");
+    const navHeader = document.getElementById("header");
 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
-
-    navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
-    navHeader.style.height = "70px";
-    navHeader.style.lineHeight = "70px";
-
-  } else {
-
-    navHeader.style.boxShadow = "none";
-    navHeader.style.height = "90px";
-    navHeader.style.lineHeight = "90px";
-
-  }
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
+        navHeader.style.height = "70px";
+        navHeader.style.lineHeight = "70px";
+    } else {
+        navHeader.style.boxShadow = "none";
+        navHeader.style.height = "90px";
+        navHeader.style.lineHeight = "90px";
+    }
 }
 
-/* ----- TYPING EFFECT ----- */
-var typingEffect = new Typed(".typedText",{
-  strings : ["Web Developer","Software QA Tester"],
-  loop : true,
-  typeSpeed : 100, 
-  backSpeed : 80,
-  backDelay : 2000
-})
+// Initialize Typed.js for typing effect
+var typingEffect = new Typed(".typedText", {
+    strings: ["Web Developer", "Software QA Tester"],
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 80,
+    backDelay: 2000
+});
 
-/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+// Scroll reveal animations
 const sr = ScrollReveal({
-      origin: 'top',
-      distance: '80px',
-      duration: 2000,
-      reset: true     
-})
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
 
-/* -- HOME -- */
-sr.reveal('.featured-text-card',{})
-sr.reveal('.featured-name',{delay: 100})
-sr.reveal('.featured-text-info',{delay: 200})
-sr.reveal('.featured-text-btn',{delay: 200})
-sr.reveal('.social_icons',{delay: 200})
-sr.reveal('.featured-image',{delay: 300})
+// Home section animations
+sr.reveal('.featured-text-card', {});
+sr.reveal('.featured-name', { delay: 100 });
+sr.reveal('.featured-text-info', { delay: 200 });
+sr.reveal('.featured-text-btn', { delay: 200 });
+sr.reveal('.social_icons', { delay: 200 });
+sr.reveal('.featured-image', { delay: 300 });
 
-/* -- PROJECT BOX -- */
-sr.reveal('.project-box',{interval: 200})
+// Project box animations
+sr.reveal('.project-box', { interval: 200 });
 
-/* -- HEADINGS -- */
-sr.reveal('.top-header',{})
+// Headings animations
+sr.reveal('.top-header', {});
 
-/* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
-
-/* -- ABOUT INFO & CONTACT INFO -- */
-
+// Scroll reveal animations from left
 const srLeft = ScrollReveal({
-  origin: 'left',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-})
+    origin: 'left',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
 
-srLeft.reveal('.about-info',{delay: 100})
-srLeft.reveal('.contact-info',{delay: 100})
+// About and contact section animations from left
+srLeft.reveal('.about-info', { delay: 100 });
+srLeft.reveal('.contact-info', { delay: 100 });
 
-/* -- ABOUT SKILLS & FORM BOX -- */
+// Scroll reveal animations from right
 const srRight = ScrollReveal({
-  origin: 'right',
-  distance: '80px',
-  duration: 2000,
-  reset: true
-})
+    origin: 'right',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
 
-srRight.reveal('.skills-box',{delay: 100})
-srRight.reveal('.form-control',{delay: 100})
+// Skills and form box animations from right
+srRight.reveal('.skills-box', { delay: 100 });
+srRight.reveal('.form-control', { delay: 100 });
 
+// Certificate info animations
+sr.reveal('.cert-info', { interval: 200 });
 
-/* -- CERTIFICATE INFO -- */
-sr.reveal('.cert-info', { interval: 200 })
-
-/* ----- EMAIL JS CONTACT ----- */
-
-// Initialize EmailJS with your user ID
+// Initialize EmailJS
 emailjs.init("0ltW81V9xijzvVmDR");
 
 // Function to display success message
@@ -295,55 +287,3 @@ function sendEmail(event) {
         sendButton.innerHTML = '<span>Send</span> <i class="uil uil-message"></i>';
     });
 }
-
-document.querySelectorAll('.view-certificate').forEach(button => {
-    button.addEventListener('click', function() {
-        // Get the modal
-        var modal = document.getElementById("certificateModal");
-        
-        // Display the modal
-        modal.style.display = "block";
-        
-        // Close the modal when the close button is clicked
-        var closeBtn = document.querySelector(".close");
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-        
-        // Close the modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    });
-});
-
-
-
-
-/* ----- CHANGE ACTIVE LINK ----- */
-  
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive() {
-  const scrollY = window.scrollY;
-
-  sections.forEach(current =>{
-    const sectionHeight = current.offsetHeight,
-        sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute('id')
-
-    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) { 
-
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
-
-    }  else {
-
-      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
-
-    }
-  })
-}
-
-window.addEventListener('scroll', scrollActive)
