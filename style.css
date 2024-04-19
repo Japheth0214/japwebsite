@@ -55,6 +55,12 @@ html {
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 
+
+p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 br{
     display: none;
 }
