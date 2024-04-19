@@ -176,6 +176,7 @@ sr.reveal('.cert-info', { interval: 200 });
 emailjs.init("0ltW81V9xijzvVmDR");
 
 // Function to display success message
+
 function showSuccessMessage(message) {
     var successDiv = document.getElementById('form-success');
     successDiv.textContent = message;
@@ -183,7 +184,6 @@ function showSuccessMessage(message) {
         successDiv.textContent = '';
     }, 3000);
 }
-
 // Function to display error message
 function showErrorMessage(message) {
     var errorDiv = document.getElementById('form-error');
@@ -191,39 +191,31 @@ function showErrorMessage(message) {
     errorMessage.textContent = message;
     errorDiv.appendChild(errorMessage);
 }
-
 // Function to send email using EmailJS with validation
 function sendEmail(event) {
     // Prevent the form from submitting
     event.preventDefault();
-
     // Clear any previous messages
     var successDiv = document.getElementById('form-success');
     var errorDiv = document.getElementById('form-error');
     successDiv.textContent = '';
     errorDiv.innerHTML = '';
-
     // Update send button text to "Sending"
     var sendButton = document.getElementById('send-button');
     sendButton.innerHTML = '<span>Sending...</span> <i class="uil uil-message"></i>';
-
     // Boolean variable to track if any field is empty
     var isEmptyField = false;
-
     // Array to store error messages
     var errors = [];
-
     // Get user inputs
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var subject = document.getElementById('subjects').value;
     var message = document.getElementById('message').value;
-
     // Check if any field is empty
     if (name.trim() === '' || email.trim() === '' || subject.trim() === '' || message.trim() === '') {
         isEmptyField = true;
     }
-
     // If any field is empty, display "fill out all required fields" error message
     if (isEmptyField) {
         errors.push('⚠️ Unable to send the form. Please fill out all the required fields.');
@@ -233,30 +225,24 @@ function sendEmail(event) {
         if (!emailRegex.test(email) && email.trim() !== '') {
             errors.push('⚠️ Please enter a valid email address.');
         }
-
         // Check if the message contains at least 10 characters
         if (message.trim().length < 10 && message.trim() !== '') {
             errors.push('⚠️ Message must be at least 10 characters long.');
         }
     }
-
     // If there are errors, display them
     if (errors.length > 0) {
         errors.forEach(function(error) {
             showErrorMessage(error);
         });
-
         // Clear error messages after 3 seconds
         setTimeout(function() {
             errorDiv.innerHTML = '';
         }, 3000);
-
         // Revert send button text to "Send"
         sendButton.innerHTML = '<span>Send</span> <i class="uil uil-message"></i>';
-
         return; // Stop execution if there are errors
     }
-
     // Send email using EmailJS
     emailjs.send("service_insuw9h", "template_5vosfmc", {
         name: name,
@@ -272,17 +258,14 @@ function sendEmail(event) {
         document.getElementById('email').value = '';
         document.getElementById('subjects').value = '';
         document.getElementById('message').value = '';
-
         // Change send button text to "Sent" for 5 seconds
         sendButton.innerHTML = '<span>Sent</span> <i class="uil uil-message"></i>';
         setTimeout(function() {
             sendButton.innerHTML = '<span>Send</span> <i class="uil uil-message"></i>';
         }, 5000);
-
     }, function(error) {
         console.error("Email sending failed!", error);
         showErrorMessage(' ⚠️ Email sending failed!');
-
         // Revert send button text to "Send"
         sendButton.innerHTML = '<span>Send</span> <i class="uil uil-message"></i>';
     });
