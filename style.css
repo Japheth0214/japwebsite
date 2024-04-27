@@ -709,7 +709,7 @@ h3 {
     /* Red color for error messages */
     font-size: 14px;
     /* Font size for error messages */
-    margin-top: -55px;
+    margin-top: -80px;
     /* Margin to separate error messages from other elements */
     padding-left: 130px;
 }
@@ -718,6 +718,7 @@ h3 {
     color: yellowgreen;
         font-size: 14px;
         padding-left: 130px;
+        margin-top: 13px;
 }
 
 .input-field {
@@ -777,6 +778,7 @@ footer {
     row-gap: 30px;
     background: #F8F8F8;
     padding-block: 40px 60px;
+    margin-top: 70px;
 }
 
 .top-footer p {
@@ -986,7 +988,7 @@ footer {
 
                 .form-error {
                     /* Font size for error messages */
-                    margin-top: -60px;
+                    margin-top: -58px;
                     /* Margin to separate error messages from other elements */
                     padding-left: -120px;
                 }
