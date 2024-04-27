@@ -930,6 +930,10 @@ footer {
 
             @media only screen and (max-width: 768.98px) {
 
+                .form-error p {
+                    margin-top:0px;
+                }
+
                 .modal-content {
                     width: 80%;
                     height: 40%;
