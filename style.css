@@ -477,6 +477,33 @@ h3 {
     background: var(--first-color-hover);
 }
 
+/* Define the keyframes for the animation */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Define the keyframes for closing animation */
+@keyframes slideOutToBottom {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+
 /* Modal */
 .modal {
     display: none;
@@ -496,6 +523,7 @@ h3 {
     background-color: rgba(0, 0, 0, 0.5);
     /* Black w/ opacity */
     align-items: center;
+    animation: slideInFromTop 1s ease-out forwards;
 }
 
 /* Modal Content */
@@ -742,6 +770,10 @@ h3 {
     max-height: 90vh;
 }
 
+/* Apply the closing animation to the modal */
+.modal.fade-out {
+    animation: slideOutToBottom 0.5s ease-out forwards;
+}
 .modal.fade .modal-dialog {
     transition: transform 0.3s ease-out;
     transform: translate(0, -50px);
@@ -871,6 +903,38 @@ h3 {
     .modal-header {
         padding: none;
         margin-top: auto;
+    }
+}
+
+#pdfModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#pdfModal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
