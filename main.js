@@ -18,7 +18,7 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
                 break;
             case 'cert3':
                 certificateUrl = 'images/cert3.pdf';
-                break
+                break;
             case 'cert4':
                 certificateUrl = 'images/cert4.pdf';
                 break;
@@ -37,18 +37,14 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
             case 'cert9':
                 certificateUrl = 'images/cert9.pdf';
                 break;
-             case 'cert10':
+            case 'cert10':
                 certificateUrl = 'images/cert10.pdf';
                 break;
-            // Add cases for the rest of your certificates
             default:
                 certificateUrl = 'images/default.pdf'; // Default PDF if no match
         }
 
         pdfFrame.src = certificateUrl;
-        modal.style.display = 'block';
-
-      pdfFrame.src = certificateUrl;
         modal.style.display = 'block';
 
         // Close the modal when the close button is clicked
@@ -66,7 +62,13 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
             }
         };
     });
+
+    // Automatically open the modal on mobile devices
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        button.click();
+    }
 });
+
     document.addEventListener('DOMContentLoaded', function() {
     const hireMeBtn = document.getElementById('hireMeBtn');
     const contactSection = document.getElementById('contact'); // Assuming the contact section has an id of 'contact'
