@@ -62,11 +62,6 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
             }
         };
     });
-
-    // Automatically open the modal on mobile devices
-    if (window.matchMedia("(max-width: 768px)").matches) {
-        button.click();
-    }
 });
 
     document.addEventListener('DOMContentLoaded', function() {
