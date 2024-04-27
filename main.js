@@ -1,18 +1,16 @@
 // JavaScript to handle the modal and event listeners for each certificate button
 document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button => {
     button.addEventListener('click', function() {
-        var modal = document.getElementById('certificateModal');
-        var closeModal = modal.querySelector('.close');
+        var modal = document.getElementById('pdfModal');
         var pdfFrame = modal.querySelector('#pdfFrame');
 
         // Get the certificate URL based on the clicked button
         var certificateUrl;
         switch(this.dataset.certificate) {
-             case 'cv':
+            case 'cv':
                 certificateUrl = 'images/resume.pdf';
                 break;
             case 'cert1':
-
                 certificateUrl = 'images/cert1.pdf';
                 break;
             case 'cert2':
@@ -47,10 +45,14 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
                 certificateUrl = 'images/default.pdf'; // Default PDF if no match
         }
 
-         pdfFrame.src = certificateUrl;
+        pdfFrame.src = certificateUrl;
+        modal.style.display = 'block';
+
+      pdfFrame.src = certificateUrl;
         modal.style.display = 'block';
 
         // Close the modal when the close button is clicked
+        var closeModal = modal.querySelector('.close');
         closeModal.addEventListener('click', function() {
             modal.style.display = 'none';
             pdfFrame.src = ''; // Clear the iframe src to stop loading the PDF
@@ -65,8 +67,6 @@ document.querySelectorAll('.download-cv-btn, .download-cert-btn').forEach(button
         };
     });
 });
-
-
     document.addEventListener('DOMContentLoaded', function() {
     const hireMeBtn = document.getElementById('hireMeBtn');
     const contactSection = document.getElementById('contact'); // Assuming the contact section has an id of 'contact'

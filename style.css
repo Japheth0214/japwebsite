@@ -503,17 +503,19 @@ h3 {
     margin: 10% auto;
     /* 15% from the top and centered */
     padding: 20px;
-    width: 50%;
+    width: 200%;
     height: 100%;
     /* Could be more or less, depending on screen size */
 }
 
 /* Close Button */
 .close {
+    font-size: 28px;
     color: #aaa;
     float: right;
-    font-size: 28px;
     font-weight: bold;
+    background-color: transparent;
+    border: none;
 }
 
 .close:hover,
@@ -688,6 +690,188 @@ h3 {
 .contact-info:hover.contact-info i {
     color: #777;
     z-index: 2;
+}
+
+
+
+/* ----- MODAL ------- */
+
+/* CSS for iframe */
+#iframeContainer {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+#iframeContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* CSS for modal */
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+
+.modal-dialog {
+    margin: auto;
+    width: 70%;
+    max-width: 90%;
+    height: auto;
+    max-height: 90vh;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -50px);
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+
+.modal.modal-static .modal-dialog {
+    transform: scale(1.02);
+}
+
+.modal-dialog-scrollable {
+    display: flex;
+    max-height: calc(100% - 1rem);
+}
+
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow: hidden;
+}
+
+.modal-dialog-scrollable .modal-header,
+.modal-dialog-scrollable .modal-footer {
+    flex-shrink: 0;
+}
+
+.modal-dialog-scrollable .modal-body {
+    overflow-y: auto;
+}
+
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+
+.modal-dialog-centered::before {
+    display: block;
+    height: calc(100vh - 1rem);
+    height: min-content;
+    content: "";
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    /* Remove border */
+    outline: 0;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: none;
+    margin-top: 30px;
+    margin-bottom:-20px;
+    /* Remove border */
+}
+
+.modal-header .close {
+    padding: 0.5rem;
+    /* Adjust padding */
+    margin: -0.5rem -0.5rem -0.5rem auto;
+    /* Adjust margin */
+    font-size: 1.5rem;
+    /* Adjust font size */
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: none;
+    /* Remove border */
+}
+
+.modal-footer>* {
+    margin: 0.25rem;
+}
+
+.modal-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal.fade .modal-dialog {
+        transition: none;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+    .modal-dialog {
+        width: 95%;
+        /* Adjust width for smaller screens */
+        max-width: 85%;
+        /* Adjust max-width for smaller screens */
+    }
+    .modal-header {
+        padding: none;
+        margin-top: auto;
+    }
 }
 
 /* ----- CONTACT FORM ----- */
@@ -928,31 +1112,12 @@ footer {
 
             }
 
-            /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-
             @media only screen and (max-width: 768.98px) {
 
                 .form-error p {
                     margin-top:0px;
                 }
 
-                .modal-content {
-                    width: 80%;
-                    height: 40%;
-                }
-
-                .close {
-                    margin-top: 10px;
-                }
-
-                #pdfFrame {
-                    width: 100%;
-                    /* Make iframe width 100% */
-                    height: 100%;
-                    /* Make iframe height 100% */
-                    border: none;
-                    /* Remove iframe border */
-                }
 
                 br {
                     display: inline;
@@ -1014,7 +1179,8 @@ footer {
                 .contact-info {
                     margin-left: 20px;
                 }
-            }
+
+             }
 
 
 
