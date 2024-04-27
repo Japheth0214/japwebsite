@@ -995,6 +995,16 @@ footer {
     font-size: 14px;
     margin-top: 10px;
 }
+ .footer-social-icons .icon a i {
+     color:gray;
+     transition: color 0.3s ease;
+     /* Smooth transition effect */
+ }
+
+ .footer-social-icons .icon a i:hover {
+     color: black;
+     /* Change color on hover */
+ }
 
 
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
